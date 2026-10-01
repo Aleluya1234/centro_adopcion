@@ -121,7 +121,9 @@ STATIC_URL = '/static/'
 CSRF_TRUSTED_ORIGINS = [
     "https://*.app.github.dev",
     "https://*.github.dev",
+    "https://localhost:8000",
 ]
+
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
