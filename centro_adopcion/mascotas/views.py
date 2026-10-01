@@ -6,9 +6,11 @@ from .models import Mascota
 # Catálogo visible para todos
 class MascotaList(ListView):
     model = Mascota
+    template_name = 'mascotas/catalogo.html'
 
 class MascotaDetail(DetailView):
     model = Mascota
+    template_name = 'mascotas/detalle.html'
 
 # Restricción: solo admins
 class AdminRequiredMixin(UserPassesTestMixin):
@@ -18,15 +20,16 @@ class AdminRequiredMixin(UserPassesTestMixin):
 class MascotaCreate(LoginRequiredMixin, AdminRequiredMixin, CreateView):
     model = Mascota
     fields = ['nombre', 'especie', 'edad', 'descripcion', 'estado']
+    template_name = 'mascotas/crear.html'
     success_url = reverse_lazy('catalogo')
 
 class MascotaUpdate(LoginRequiredMixin, AdminRequiredMixin, UpdateView):
     model = Mascota
-    fields = ['estado']  # Solo cambiar estado
+    fields = ['estado']
+    template_name = 'mascotas/editar.html'
     success_url = reverse_lazy('catalogo')
 
 class MascotaDelete(LoginRequiredMixin, AdminRequiredMixin, DeleteView):
     model = Mascota
+    template_name = 'mascotas/eliminar.html'
     success_url = reverse_lazy('catalogo')
-
-# Create your views here.

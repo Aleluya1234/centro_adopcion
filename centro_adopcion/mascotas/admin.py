@@ -8,4 +8,3 @@ class MascotaAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'especie', 'edad', 'estado')
     list_filter = ('estado', 'especie')
 
-
