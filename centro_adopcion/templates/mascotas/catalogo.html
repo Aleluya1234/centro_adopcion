@@ -1,8 +1,13 @@
+{% extends 'mascotas/base.html' %}
+{% block content %}
 <h1>Catálogo de Mascotas</h1>
 <ul>
     {% for mascota in object_list %}
         <li>
             <a href="{{ mascota.id }}/">{{ mascota.nombre }} - {{ mascota.get_estado_display }}</a>
         </li>
+    {% empty %}
+        <li>No hay mascotas registradas.</li>
     {% endfor %}
 </ul>
+{% endblock %}

@@ -1,5 +1,8 @@
+{% extends 'mascotas/base.html' %}
+{% block content %}
 <h1>{{ object.nombre }}</h1>
-<p>Especie: {{ object.especie }}</p>
-<p>Edad: {{ object.edad }}</p>
-<p>Descripción: {{ object.descripcion }}</p>
-<p>Estado: {{ object.get_estado_display }}</p>
+<p><strong>Especie:</strong> {{ object.especie }}</p>
+<p><strong>Edad:</strong> {{ object.edad }}</p>
+<p><strong>Descripción:</strong> {{ object.descripcion }}</p>
+<p><strong>Estado:</strong> {{ object.get_estado_display }}</p>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Centro de Adopción</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav a { margin-right: 10px; text-decoration: none; color: blue; }
+        nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Catálogo</a>
+        <a href="/admin/">Admin</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

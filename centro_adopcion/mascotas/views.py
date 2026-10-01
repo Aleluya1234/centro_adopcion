@@ -3,7 +3,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from .models import Mascota
 
-# Catálogo visible para todos
 class MascotaList(ListView):
     model = Mascota
     template_name = 'mascotas/catalogo.html'
@@ -12,7 +11,6 @@ class MascotaDetail(DetailView):
     model = Mascota
     template_name = 'mascotas/detalle.html'
 
-# Restricción: solo admins
 class AdminRequiredMixin(UserPassesTestMixin):
     def test_func(self):
         return self.request.user.is_staff
